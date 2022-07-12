@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   def index
 
-    render json: User.all, include: :blogs
+    render json: User.all, include: [:profile, :blogs, :messages]
   end
 
   # GET /users/1
   def show
-    render json: @user, include: :blogs
+    render json: @user, include: [:profile, :blogs, :messages]
   end
 
   # POST /users
